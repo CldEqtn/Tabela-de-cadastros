@@ -1,0 +1,55 @@
+﻿@model CadastroEstudantes.Models.Estudante
+
+@{
+    ViewData["Title"] = "Editar cadastro";
+}
+<section class="conteudo padding_section">
+    <div class="introducao">
+    <h1>Altere o cadastro</h1>
+    </div>
+    <section class="inputs_group">
+        <div class="estudante_info-ED">
+            <form asp-action="Edit" autocomplete="off">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="inputs_firstrow">
+                    <div class="input">@* Nome *@
+                        <p>Nome</p>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="input"> @* CPF *@
+                         <p>CPF</p>
+                        <input asp-for="Cpf" class="form-control" id="Cpf"/>
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="input"> @* Endereço *@
+                    <p>Endereço</p>
+                    <input asp-for="Endereco" class="form-control" />
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
+                </div>
+
+                <div class="input"> @* Data de conclusão *@
+                    <p>Data de conclusão</p>
+                    <input asp-for="DataConclusao" class="form-control"/>
+                    <span asp-validation-for="DataConclusao" class="text-danger"></span>
+                </div>
+
+                <div class="submit_button">
+                    <input type="submit" value="Salvar"/>
+                </div>
+                <div class="back">
+                    <a asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

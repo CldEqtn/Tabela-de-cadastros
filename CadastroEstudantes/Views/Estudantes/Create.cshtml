@@ -1,0 +1,65 @@
+﻿@model CadastroEstudantes.Models.Estudante
+
+@{
+    ViewData["Title"] = "Novo estudante";
+}
+
+<section class="conteudo padding_section">
+    <div class="introducao">
+        <h1>Novo cadastro</h1>
+    </div>
+ <section class="inputs_group">
+    <div class="estudante_info-ED">
+            <form asp-action="Create" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="inputs_firstrow">
+                <div class="input"> @* Nome *@
+                    <p>Nome</p>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="input">
+                        @* CPF *@
+                    <p>CPF</p>
+                    <input asp-for="Cpf" class="form-control" id="Cpf"/>
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="input">
+                    @* Endereço *@
+                <p>Endereço</p>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+
+            <div class="input"> @* Data de conclusão *@
+                <p>Data de conclusão</p>
+                <input asp-for="DataConclusao" class="form-control" />
+                <span asp-validation-for="DataConclusao" class="text-danger"></span>
+            </div>
+
+            <div class="submit_button">
+                <input type="submit" value="Cadastrar"/>
+            </div>
+            <div class="back">
+                <a asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+</section>
+<script>
+    $(document).ready(function () {
+        $('#Cpf').mask('000.000.000-00');
+    });
+</script>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

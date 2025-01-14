@@ -1,0 +1,40 @@
+﻿@model CadastroEstudantes.Models.Estudante
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<section class="conteudo padding_section">
+    <div class="introducao"><h2>Confira o cadastro que deseja deletar</h2></div>
+    <div class="estudante_info">
+        <h4>Informações do estudante</h4>
+        <dl class="row">
+            <dt>Nome</dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>CPF</dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Cpf)
+            </dd>
+            <dt>Endereço</dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Endereco)
+            </dd>
+            <dt>Data de conclusão</dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.DataConclusao)
+            </dd>
+        </dl>
+        <div class="delete_button">
+            <form asp-action="Delete" onsubmit="return confirm('Essa ação excluirá o cadastro permanentemente.\n\n Deseja prosseguir?');">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Deletar"/>
+
+                <div class="back">
+                <a asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

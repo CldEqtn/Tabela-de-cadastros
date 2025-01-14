@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CadastroEstudantes.Models.Estudante> // transforma a classe de "Estudante" em uma "Coleção"
+
+@{
+    ViewData["Title"] = "Tabela de Cadastros";
+}
+
+<header>
+    <nav class="navbar">
+        <form asp-controller="Estudantes" asp-action="Index" autocomplete="off">
+            
+            <label>Pesquisa por nome</label>
+            <div class="filtros">
+                <input type="text" placeholder="nome" name="filtroNome">
+
+                <input class="btn_filtro" type="submit" value="Filtrar" />
+                <button class="btn_filtro" type="button" onclick="location.href='@Url.Action("Index")'">Limpar filtro</button>
+
+            </div>
+
+        </form>
+    </nav>
+</header>
+
+<section class="conteudo padding_section">
+    <div class="introducao">
+        <h1>Bem vindo a tabela de cadastros!</h1>
+        <h2>Aqui estão os cadastros de estudantes.</h2>
+    </div>
+
+<table class="estudante_table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Endereço</th>
+            <th>Data de Conclusão</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataConclusao)
+            </td>
+            <td class="options">
+                <div><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></div>
+            </td>
+            <td class="options">
+                <div><a asp-action="Delete" asp-route-id="@item.Id">Deletar</a> </div> 
+            </td>    
+        </tr>
+}
+    </tbody>
+</table>
+
+    <button type="button" onclick="location.href='@Url.Action("Create")'">
+        <p>
+            Novo
+        </p>
+    </button>
+</section>

@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{    
+    --blue: #2957a4;
+    --blue-overlay: #477ad3;
+    --padding-section: calc((100vw - 1200px)/2 );
+    --pading-but: 24px;
+    --nav-height: 80px;
+
+    --padding-section-mob: calc((10vw -800px)/2 )
+}
+
+.padding_section{
+    padding-left: 5vw;
+    padding-right: 5vw; 
+}
+
+
+/*  */
+
+
+.navbar{
+    background-color: var(--blue);
+    height: var(--nav-height);
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 99;
+}
+
+.navbar_img{
+    height: 70%;
+}
+
+.navbar_nav{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 90px;
+}
+.navbar > form  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filtros input {
+  height: 25px;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+}
+.filtros input:nth-of-type(1){
+  padding-left: 5%;
+}
+.navbar > form > label {
+  font-size: 1.5rem;
+  color: white;
+}
+.filtros{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_filtro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+
+
+  background-color: white;
+  border-radius: 5px;
+  width: 50px;
+  height: 25px;
+
+  transition: all 0.3s ease;
+}
+.btn_filtro:nth-of-type(1){
+  width: 90px;
+}
+.btn_filtro:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+
+/*  */
+/* FIM DA MAIN */
+/*  */
+
+
+/* INDEX */
+/*  */
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.introducao{
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.introducao > h1{
+  font-size: 3.5rem;
+}
+.introducao > h2{
+  font-size: 2.5rem;
+}
+
+.estudante_table{
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+}
+.estudante_table th, .estudante_table td{
+  padding: 12px 13px;
+}
+.estudante_table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.estudante_table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.estudante_table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--blue);
+}
+.estudante_table thead tr{
+  text-align: left;
+  color: white;
+
+  background-color: var(--blue);
+}
+
+.options > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--blue);
+  border-radius: 5px;
+  width: 65px;
+  height: 35px;
+
+  transition: all 0.3s ease;
+}
+.options div:hover {
+  background-color: var(--blue-overlay);
+  cursor: pointer;
+}
+.options > div >a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.conteudo > button > p{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--blue);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  
+  transition: all 0.3s ease;
+}
+.conteudo > button > p:hover {
+  background-color: var(--blue-overlay);
+  cursor: pointer;
+}
+.conteudo > button {
+  margin-top: 50px;
+  margin-left: 5%;
+  width: 80px;
+  height: 40px;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+
+  color: white;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+
+
+/* NOVO + EDIÇÃO*/
+/*  */
+.inputs_group{
+  margin-top: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input input{
+  width: 600px;
+  height: 30px;
+}
+.input{
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 7px;
+}
+.input p{
+  font-size: 1.5rem;
+}
+.input span{
+  font-size: 1.2rem;
+  color: red;
+}
+.inputs_firstrow{
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-between;
+}
+
+.inputs_firstrow div > input{
+  width: 280px;
+  height: 30px;
+}
+
+.back{
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+  
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.back > a{
+  color: black;
+}
+
+.estudante_info-ED{
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 20px;
+  padding: 30px;
+  
+  width: 55%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15); 
+}
+
+
+/* DELETAR */
+/*  */
+.estudante_info{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 20px;
+  padding: 30px;
+  
+  width: 30%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15); 
+}
+.estudante_info h4{
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.estudante_info dd{
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+}
+.estudante_info dt{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* GERAL */
+/*  */
+.submit_button{
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+.submit_button input{
+  display: flex;
+
+  width: 150px;
+  height: 40px;
+  background-color: var(--blue);
+  border-radius: 5px;
+
+  justify-self: center;
+
+
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+
+  color: white;
+  font-weight: 700;
+  font-size: 1.7rem;
+
+  transition: all 0.3s ease;
+
+}
+.submit_button input:hover {
+  background-color: var(--blue-overlay);
+  cursor: pointer;
+}
+
+.delete_button input{
+  display: flex;
+  justify-self: center;
+  
+  background-color: #ffffff00;
+  width: 150px;
+  height: 40px;
+  border: red 0.2em solid;
+  border-radius: 5px;
+  
+  
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  
+  color: red;
+  font-weight: 700;
+  font-size: 1.7rem;
+  
+  transition: all 0.6s ease;
+
+}
+.delete_button input:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
