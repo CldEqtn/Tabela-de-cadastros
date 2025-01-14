@@ -6,9 +6,5 @@ Este é um projeto de uma tabela de cadastros de estudantes com banco de dados i
 
 ![image](https://github.com/user-attachments/assets/7e119f3c-67e5-4a1b-a9fb-c5ee3ed1b020)
 
-Na pasta "\Views\Estudantes\" estão os arquivos CRUD, assim como o Index.cshtml utilizado para vizualização.
+Na pasta "\Views\Estudantes\" estão os arquivos "CRUD", assim como o "Index.cshtml" utilizado para vizualização.
 
-## Dependências do projeto
-O projeto utilizou:
-- jQuery
-- LINQ
